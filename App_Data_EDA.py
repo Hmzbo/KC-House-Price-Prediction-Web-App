@@ -1,10 +1,7 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sb
-import plotly.express as px
-import plotly.graph_objects as go
 
 def load_clean_data():
     data = pd.read_csv('../kc_house_data.csv')
@@ -137,6 +134,6 @@ def show_EDA_page():
     sb.barplot(x=data.bathrooms, y=data.price, palette='mako')
     st.pyplot(fig7)
 
-    st.write("You can predict the price of a house using an MLP model on the Predict page")
+    st.subheader("You can predict the price of a house using a Linear Regression model on the Predict page")
 
     return None
