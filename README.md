@@ -8,7 +8,4 @@ a house price based on feautures provided by the user.
  - App_Data_EDA.py, App_KCP.py, and App_Predict_page.py: Streamlit app files
  - EDA.ipynb: Detailed EDA notebook of the KC House prices dataset
  - Procfile, setup.sh, and requirements.txt: Files required for deployment on Heroku
- - scaler.pkl: File containing the sklearn standard scaler model
-
-The MLP_kc folder contain the tensorflow prediction model.
-
+ - regr.pkl and scaler.pkl: Files containing the sklearn regression and standard scaler model

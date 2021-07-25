@@ -4,7 +4,7 @@ from pickle import load
 
 
 def load_model():
-    with open('./regr.pkl', 'rb') as file:
+    with open('regr.pkl', 'rb') as file:
         model = load(file)
     return model
 
@@ -46,7 +46,7 @@ def show_pred_page():
 
     features = [nbr_bedrooms, nbr_bathrooms, liv_area, lot_area, nbr_floors, has_waterfront, view, condition, grade,
                 above_area, basement_area, built, year_renov, zip, lat, long]
-    with open('./scaler.pkl', 'rb') as file:
+    with open('scaler.pkl', 'rb') as file:
         scaler = load(file)
 
     features = scaler.transform(np.array(features).reshape(-1, 16))
