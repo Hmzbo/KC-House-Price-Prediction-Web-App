@@ -4,7 +4,7 @@ from pickle import load
 
 
 def load_model():
-    with open('../regr.pkl', 'rb') as file:
+    with open('./regr.pkl', 'rb') as file:
         model = load(file)
     return model
 
@@ -22,10 +22,10 @@ def show_pred_page():
 
     nbr_bedrooms = st.slider(label='Bedrooms', min_value=1, max_value=35, step=1)
     nbr_bathrooms = st.slider(label='Bathrooms', min_value=0.0, max_value=10.0, step=0.25)
-    liv_area = st.number_input(label='Living Area (ft²)', min_value=0, max_value=14000)
-    lot_area = st.number_input(label='Lot Area (ft²)', min_value=0)
-    above_area = st.number_input(label='Area Above (ft²)', min_value=0, max_value=14000)
-    basement_area = st.number_input(label='Basement Area (ft²)', min_value=0)
+    liv_area = st.number_input(label='Living Area (ft2)', min_value=0, max_value=14000)
+    lot_area = st.number_input(label='Lot Area (ft2)', min_value=0)
+    above_area = st.number_input(label='Area Above (ft2)', min_value=0, max_value=14000)
+    basement_area = st.number_input(label='Basement Area (ft2)', min_value=0)
 
     view = st.radio('View', options=(0, 1, 2, 3, 4))
     condition = st.radio('Condition', options=(1, 2, 3, 4, 5))
@@ -46,7 +46,7 @@ def show_pred_page():
 
     features = [nbr_bedrooms, nbr_bathrooms, liv_area, lot_area, nbr_floors, has_waterfront, view, condition, grade,
                 above_area, basement_area, built, year_renov, zip, lat, long]
-    with open('../scaler.pkl', 'rb') as file:
+    with open('./scaler.pkl', 'rb') as file:
         scaler = load(file)
 
     features = scaler.transform(np.array(features).reshape(-1, 16))
