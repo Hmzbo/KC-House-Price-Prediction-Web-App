@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sb
 
 def load_clean_data():
-    data = pd.read_csv('../kc_house_data.csv')
+    data = pd.read_csv('kc_house_data.csv')
     data.date = pd.to_datetime(data.date, infer_datetime_format=True)
     return data
 
