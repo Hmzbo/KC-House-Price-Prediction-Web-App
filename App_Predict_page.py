@@ -4,12 +4,10 @@ import tensorflow as tf
 from pickle import load
 
 
-def load_model():
-    model = tf.keras.models.load_model('MLP_kc')
-    return model
+with open('scaler.pkl', 'rb') as file:
+    scaler = load(file)
 
-
-MLP_model = load_model()
+MLP_model = tf.keras.models.load_model('MLP_kc')
 
 
 def show_pred_page():
@@ -46,8 +44,6 @@ def show_pred_page():
 
     features = [nbr_bedrooms, nbr_bathrooms, liv_area, lot_area, nbr_floors, has_waterfront, view, condition, grade,
                 above_area, basement_area, built, year_renov, zip, lat, long]
-    with open('scaler.pkl', 'rb') as file:
-        scaler = load(file)
 
     features = scaler.transform(np.array(features).reshape(-1, 16))
     st.write('  ')
