@@ -1,15 +1,15 @@
 import streamlit as st
 import numpy as np
+import tensorflow as tf
 from pickle import load
 
 
 def load_model():
-    with open('regr.pkl', 'rb') as file:
-        model = load(file)
+    model = tf.keras.models.load_model('MLP_kc')
     return model
 
 
-LR_model = load_model()
+MLP_model = load_model()
 
 
 def show_pred_page():
@@ -54,7 +54,7 @@ def show_pred_page():
     st.write('  ')
     col1, col2, col3 = st.beta_columns([1, 0.5, 1])
     if col2.button('Predict price'):
-        price_pred = LR_model.predict(np.array(features))
+        price_pred = LR_model.predict(np.array(features).reshape(-1, 16, 1))
         col1, col2, col3 = st.beta_columns([1, 2, 1])
         col2.subheader(f'The predicted price is: ${float(price_pred):.2f}')
 
