@@ -9,3 +9,5 @@ a house price based on feautures provided by the user.
  - EDA.ipynb: Detailed EDA notebook of the KC House prices dataset
  - Procfile, setup.sh, and requirements.txt: Files required for deployment on Heroku
  - regr.pkl and scaler.pkl: Files containing the sklearn regression and standard scaler model
+
+The web app is deployed on Heroku, and can be used via this [link](https://kcp-app.herokuapp.com/).
