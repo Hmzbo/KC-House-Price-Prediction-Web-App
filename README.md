@@ -7,7 +7,8 @@ a house price based on feautures provided by the user.
  - kc_house_data.csv: Data set file
  - App_Data_EDA.py, App_KCP.py, and App_Predict_page.py: Streamlit app files
  - Procfile, setup.sh, and requirements.txt: Files required for deployment on Heroku
- - regr.pkl and scaler.pkl: Files containing the sklearn regression and standard scaler model
+ - regr.pkl and scaler.pkl: Files containing the sklearn regression and standard scaler model  
+
 The MLP_kc folder contains the MLP model in the TF SavedModel format.
 
 The web app is deployed on Heroku, and can be used via this [link](https://kcp-app.herokuapp.com/).
