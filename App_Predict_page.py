@@ -54,7 +54,7 @@ def show_pred_page():
     st.write('  ')
     col1, col2, col3 = st.beta_columns([1, 0.5, 1])
     if col2.button('Predict price'):
-        price_pred = LR_model.predict(np.array(features).reshape(-1, 16, 1))
+        price_pred = MLP_model.predict(np.array(features).reshape(-1, 16, 1))
         col1, col2, col3 = st.beta_columns([1, 2, 1])
         col2.subheader(f'The predicted price is: ${float(price_pred):.2f}')
 
