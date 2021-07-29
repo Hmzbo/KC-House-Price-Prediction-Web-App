@@ -11,5 +11,5 @@ a house price based on feautures provided by the user.
 
 The MLP_kc folder contains the MLP model in the TF SavedModel format.
 
-The web app is deployed on Heroku, and can be used via this [link](https://kcp-app.herokuapp.com/).
+The web app is deployed on Heroku, and can be used via this [link](https://kcp-app.herokuapp.com/), or on Streamlit share via this [link](https://share.streamlit.io/hmzbo/kc-house-price-prediction-web-app/main/App_KCP.py)
 The EDA notebook with more detailed analysis is available on [Kaggle](https://www.kaggle.com/hamzaboulahia/eda-kc).
